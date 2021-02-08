@@ -1,0 +1,281 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+
+  body { 
+    font-family: 'Courier New';
+    font-size: 12px;
+    line-height: 1.4em;
+    background: #404040;
+    color: #FFFFFF;
+  }
+
+  #wrap {
+    padding: 0 3.5%;
+  }
+
+  svg {
+    font-family: Ubuntu, Tahoma, Helvetica, sans-serif;
+  }
+
+  canvas, svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #chart {
+    position: relative;
+  }
+
+  .brush rect.extent {
+    fill: rgba(100,100,100,0.15);
+  }
+
+  .brush:hover rect.extent {
+    stroke: #222;
+    stroke-dasharray: 5,5;
+  }
+
+  .brush rect.extent:hover {
+    stroke-dasharray: none;
+  }
+
+  .resize rect {
+    fill: none;
+  }
+
+  .background {
+    fill: none;
+  }
+
+  .axis line, .axis path {
+    fill: none;
+    stroke: #777;
+    stroke-width: 1;
+  }
+
+  .axis .tick {
+    width: 200px;
+  }
+
+  .axis text {
+    fill: #FFFFFF;
+    text-anchor: right;
+    font-size: 11px;
+  }
+
+  .axis text.label {
+    font-size: 12px;
+    cursor: move;
+    padding-bottom: 24px;
+  }
+
+  .quarter, .third, .half {
+    float: left;
+  }
+
+  .quarter {
+    width: 23%;
+    margin: 0 1%;
+  }
+
+  .third {
+    width: 31.3%;
+    margin: 0 1%;
+  }
+
+  .half {
+    width: 48%;
+    margin: 0 1%;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Times New Roman';
+  }  
+
+  h3 {
+    font-size: 18px;
+    margin: 12px 0 9px;
+  }
+
+  p {
+    font: 12px 'Courier New';
+    color: lightgrey;
+    text-align: left;
+    margin: 0.6em 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+
+  button[disabled=disabled] {
+    color: #555 !important;
+    opacity: 0.4;
+  }
+
+  .settings button[disabled=disabled] {
+    display: none;
+  }
+
+  #alias {
+    width: 100%;
+    height: 300px;
+    overflow-x: auto;
+    overflow-y: scroll;
+    white-space: nowrap;
+  }
+
+  #legend {
+    text-align: left;
+    overflow-y: auto;
+  }
+
+  .row {
+    cursor: pointer;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+  }
+
+  .row:hover {
+    text-decoration: line-through;
+  }
+
+  .tally {
+    padding-right: 3px;
+    font-weight: bold;
+    font: 'Arial';
+  }
+
+  .off {
+    font-size: 8px;
+    line-height: 1.3em;
+  }
+
+  .color-block, .color-bar {
+    display: inline-block;
+    height: 12px;
+    width: 8px;
+    margin: 1px 4px 1px 0px;
+    border-radius: 3px 3px 3px 3px;
+  }
+
+  .color-bar:hover {
+    background: grey;
+  }
+
+  #rendered-bar,
+  #selected-bar {
+    width:0%;
+    font-size: 14px;
+  }
+
+  #rendered-bar {
+    background: #888;
+    border-right: 1px solid #666;
+  }
+
+  #selected-bar {
+    background: rgba(160,160,160,0.5);
+    border-right: 1px solid #999;
+  }
+
+  .fillbar {
+    height: 12px;
+    line-height: 12px;
+    border:1px solid rgba(120,120,120,0.5);
+    width: 120px;
+    display: inline-block;
+  }
+
+  .little-box {
+    width: 268px;
+    float: left;
+  }
+
+  #header {
+    border-bottom: 1px solid rgba(100,100,100,0.35);
+    padding: 36px 24px 4px;
+    line-height: 2px;
+  }
+
+  #header h1 {
+    font: 25px 'Times New Roman';
+    font-weight: bold;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 7px;
+    margin-top: 3px;
+  }
+
+  #header p {
+    text-align: center;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  #header button {
+    vertical-align: top;
+  }
+
+  .controls {
+    float: right;
+    height: 24px;
+    line-height: 24px;
+  }
+  
+  /* Scrollbars */
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+   
+  ::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 12px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #b5b5b5;
+    border-radius: 12px;
+  }
+
+  #search {
+    font-family: 'Courier New';
+    width: 50%;
+    border: 1px solid darkgrey;
+    padding: 5px;
+    height: 15px;
+    box-shadow: 1px 2px 3px #d3d3d315;
+    outline: none;
+    color: #404040;
+    border-radius: 3px 3px 3px 3px;
+  }
+
+  input {
+    padding-left: 10px;
+  }
+
+  .row-2 {
+    display: flex;
+    align-items: center;
+    line-height: 1.6em;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .row-2:hover {
+    color: #404040;
+    background: #FFFFFF;
+    border-radius: 3px 3px 3px 3px;
+  }

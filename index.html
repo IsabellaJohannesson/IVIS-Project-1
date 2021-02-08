@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Skills Database Explorer</title>
+    <link rel="stylesheet" type="text/css" href="parallel.css" />
+  </head>
+  <body>
+  <div id="header">
+    <div>
+      <h1>Parallel Coordinates</h1>
+    </div>
+
+    <div class="controls">
+      <strong id="rendered-count"></strong>/<strong id="selected-count"></strong><!--<strong id="data-count"></strong>-->
+      <div class="fillbar"><div id="selected-bar"><div id="rendered-bar">&nbsp;</div></div></div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+
+
+  <div id="chart">
+    <canvas id="background"></canvas>
+    <canvas id="foreground"></canvas>
+    <canvas id="highlight"></canvas>
+    <svg></svg>
+  </div>
+  <div id="wrap">
+
+    <div class="third" id="controls">
+
+      <div class="little-box">
+        <h3>About</h3>
+        <p>The task was to design an information visualization system to support the creation of the best possible groups of five or six people for the Final Group Project in your Information Visualization 2020 course.</p>
+      </div>
+
+      <div class="little-box">
+        <h3>Controls</h3>
+        <p>
+          <strong>Brush</strong>: Drag vertically along an axis.<br/>
+          <strong>Remove Brush</strong>: Tap the axis background.<br/>
+          <strong>Reorder Axes</strong>: Drag a label horizontally.<br/>
+          <strong>Invert Axis</strong>: Tap an axis label.<br/>
+          <strong>Remove Axis</strong>: Drag axis label to the left edge.<br/>
+        </p>
+      </div>
+
+      <div class="little-box">
+        <h3>Credits &amp; License</h3>
+          <p>
+          Adapted from examples by <a href="http://bl.ocks.org/syntagmatic/raw/3150059/">Kai Chang</a>, 2012.<br/>
+          </p>
+        </p>
+      </div>
+
+    </div>
+
+    <div  class="third">
+      <h3>Majors</h3>
+      <p id="legend"></p>
+    </div>
+
+    <div class="third">
+      <h3>Alias<input type="text" id="search" placeholder="Search Alias..."></input></h3>
+      <p id="alias">
+      </p>
+    </div>
+
+    </div>
+  </div>
+  </body>
+  <script src="https://mbostock.github.com/d3/d3.v2.js"></script>
+  <script src="http://underscorejs.org/underscore.js"></script>
+  <script src="parallel.js"></script>
+</html>
